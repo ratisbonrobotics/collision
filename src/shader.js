@@ -32,7 +32,15 @@ function getFragmentShaderSource() {
         varying vec3 o_vertexnorm;
 
         void main() {
-            vec3 color = Ka * vec3(texture2D(tex, o_texcoord).rgb);
+            vec3 texColor = vec3(texture2D(tex, o_texcoord).rgb);
+            vec3 ambient = Ka * texColor;
+
+            vec3 norm = normalize(o_vertexnorm);
+            vec3 lightDirection = vec3(0.0, 1.0, 0.0); // Constant light source from above
+            float diffuseIntensity = max(dot(norm, lightDirection), 0.0);
+            vec3 diffuse = texColor * diffuseIntensity;
+
+            vec3 color = ambient + diffuse;
             gl_FragColor = vec4(color, 1.0);
         }
     `;

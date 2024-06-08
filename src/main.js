@@ -25,6 +25,7 @@ function renderScene() {
         connectBufferToAttribute(gl, gl.ARRAY_BUFFER, ashtray_drawable["texcoordbuffer"][p], attrib_locs["texcoord"], 2);
 
         gl.bindTexture(gl.TEXTURE_2D, ashtray_drawable["texture"][p]);
+        gl.uniform3fv(uniform_locs["Ka"], [0.2, 0.2, 0.2]);
         
         gl.drawArrays(gl.TRIANGLES, 0, ashtray_drawable["vertexbuffer"][p]["n_verticies"]);
     }
@@ -37,6 +38,7 @@ function renderScene() {
         connectBufferToAttribute(gl, gl.ARRAY_BUFFER, clock_drawable["texcoordbuffer"][p], attrib_locs["texcoord"], 2);
 
         gl.bindTexture(gl.TEXTURE_2D, clock_drawable["texture"][p]);
+        gl.uniform3fv(uniform_locs["Ka"], [0.2, 0.2, 0.2]);
         
         gl.drawArrays(gl.TRIANGLES, 0, clock_drawable["vertexbuffer"][p]["n_verticies"]);
     }  
@@ -44,7 +46,7 @@ function renderScene() {
 
 // --- GET DATA FROM 3D FILES ---
 let ashtray_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "verticies": [], "keys": [] };
-let clock_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "verticies": [], "keys": [] };
+let clock_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "verticies": [], "keys": [] };
 
 (async function loadData() {
     document.getElementById('loading_overlay').style.display = 'flex';
