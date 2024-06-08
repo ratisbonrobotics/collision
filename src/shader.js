@@ -27,6 +27,8 @@ function getFragmentShaderSource() {
         uniform sampler2D tex;
 
         uniform vec3 Ka;
+        uniform float blend;
+        uniform int diff;
         
         varying vec2 o_texcoord;
         varying vec3 o_vertexnorm;
@@ -40,8 +42,11 @@ function getFragmentShaderSource() {
             float diffuseIntensity = max(dot(norm, lightDirection), 0.0);
             vec3 diffuse = texColor * diffuseIntensity;
 
+            if (diff == 0)
+                diffuse = vec3(0.0, 0.0, 0.0);
+
             vec3 color = ambient + diffuse;
-            gl_FragColor = vec4(color, 1.0);
+            gl_FragColor = vec4(color, blend);
         }
     `;
 }
