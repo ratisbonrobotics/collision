@@ -24,13 +24,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[12] += 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["closestPointOfDrawable1ToDrawable2"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["closestPointOfDrawable1ToDrawable2"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["closestPointOfDrawable1ToDrawable2"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["directionOfCollision1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["directionOfCollision1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["directionOfCollision1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["closestPointOfDrawable2ToDrawable1"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["closestPointOfDrawable2ToDrawable1"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["closestPointOfDrawable2ToDrawable1"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["directionOfCollision2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["directionOfCollision2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["directionOfCollision2"][2]
         }
     }
 
@@ -39,13 +39,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[12] -= 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["closestPointOfDrawable1ToDrawable2"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["closestPointOfDrawable1ToDrawable2"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["closestPointOfDrawable1ToDrawable2"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["directionOfCollision1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["directionOfCollision1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["directionOfCollision1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["closestPointOfDrawable2ToDrawable1"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["closestPointOfDrawable2ToDrawable1"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["closestPointOfDrawable2ToDrawable1"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["directionOfCollision2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["directionOfCollision2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["directionOfCollision2"][2]
         }
     }
 
@@ -54,13 +54,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[14] += 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["closestPointOfDrawable1ToDrawable2"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["closestPointOfDrawable1ToDrawable2"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["closestPointOfDrawable1ToDrawable2"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["directionOfCollision1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["directionOfCollision1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["directionOfCollision1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["closestPointOfDrawable2ToDrawable1"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["closestPointOfDrawable2ToDrawable1"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["closestPointOfDrawable2ToDrawable1"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["directionOfCollision2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["directionOfCollision2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["directionOfCollision2"][2]
         }
     }
 
@@ -69,13 +69,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[14] -= 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["closestPointOfDrawable1ToDrawable2"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["closestPointOfDrawable1ToDrawable2"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["closestPointOfDrawable1ToDrawable2"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["directionOfCollision1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["directionOfCollision1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["directionOfCollision1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["closestPointOfDrawable2ToDrawable1"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["closestPointOfDrawable2ToDrawable1"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["closestPointOfDrawable2ToDrawable1"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["directionOfCollision2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["directionOfCollision2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["directionOfCollision2"][2]
         }
     }
 
