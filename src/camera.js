@@ -19,48 +19,43 @@ let viewmatrix_prev = viewmatrix;
 let rotx = 0.0;
 
 setInterval(function () {
+
+    let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
+
     if (keys["1"]){
         clock_drawable.modelmatrix[12] += 0.001;
         clock_convex_drawable.modelmatrix[12] += 0.001;
-        let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
-        if(sat["collision"]){
-            gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
-        }
     }
 
     if (keys["2"]){
         clock_drawable.modelmatrix[12] -= 0.001;
         clock_convex_drawable.modelmatrix[12] -= 0.001;
-        let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
-        if(sat["collision"]){
-            gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
-        }
     }
 
     if (keys["3"]){
         clock_drawable.modelmatrix[14] += 0.001;
         clock_convex_drawable.modelmatrix[14] += 0.001;
-        let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
-        if(sat["collision"]){
-            gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
-        }
     }
 
     if (keys["4"]){
         clock_drawable.modelmatrix[14] -= 0.001;
         clock_convex_drawable.modelmatrix[14] -= 0.001;
-        let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
-        if(sat["collision"]){
-            gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
-        }
     }
 
     if (keys["5"]){
-        console.log(separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable));
+        console.log(sat);
+    }
+
+    if(sat["collision"]){
+        gl.deleteBuffer(line["vertexbuffer"]);
+        line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
+        // move ashtray to avoid collision
+        ashtray_drawable.modelmatrix[12] += sat["directionOfCollision"][1][0];
+        ashtray_drawable.modelmatrix[13] += sat["directionOfCollision"][1][1];
+        ashtray_drawable.modelmatrix[14] += sat["directionOfCollision"][1][2];
+        ashtray_convex_drawable.modelmatrix[12] += sat["directionOfCollision"][1][0];
+        ashtray_convex_drawable.modelmatrix[13] += sat["directionOfCollision"][1][1];
+        ashtray_convex_drawable.modelmatrix[14] += sat["directionOfCollision"][1][2];
     }
 
     let movementVector = getKeyboardInput(0.007);
