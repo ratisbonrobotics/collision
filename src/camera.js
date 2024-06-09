@@ -25,7 +25,7 @@ setInterval(function () {
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
             gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["axisOfCollision"][0], ...sat["axisOfCollision"][1]]);
+            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
         }
     }
 
@@ -35,7 +35,7 @@ setInterval(function () {
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
             gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["axisOfCollision"][0], ...sat["axisOfCollision"][1]]);
+            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
         }
     }
 
@@ -45,7 +45,7 @@ setInterval(function () {
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
             gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["axisOfCollision"][0], ...sat["axisOfCollision"][1]]);
+            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
         }
     }
 
@@ -55,7 +55,7 @@ setInterval(function () {
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
             gl.deleteBuffer(line["vertexbuffer"]);
-            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["axisOfCollision"][0], ...sat["axisOfCollision"][1]]);
+            line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
         }
     }
 
