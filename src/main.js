@@ -12,7 +12,8 @@ let ashtray_convex_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoord
 let clock_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 let clock_convex_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 
-let tinycube_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
+let tinycube_drawable1 = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
+let tinycube_drawable2 = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 
 (async function loadData() {
     document.getElementById('loading_overlay').style.display = 'flex';
@@ -20,7 +21,8 @@ let tinycube_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer
     await loadDrawable('/data/antique_clock_convex_hull.obj', clock_convex_drawable);
     await loadDrawable('/data/ash_tray.obj', ashtray_drawable);
     await loadDrawable('/data/ash_tray_convex_hull.obj', ashtray_convex_drawable);
-    await loadDrawable('/data/tiny_cube.obj', tinycube_drawable, undefined, [0, 1, 0]);
+    await loadDrawable('/data/tiny_cube.obj', tinycube_drawable1, undefined, [0, 1, 0]);
+    await loadDrawable('/data/tiny_cube.obj', tinycube_drawable2, undefined, [1, 0, 0]);
     document.getElementById('loading_overlay').style.display = 'none';
     drawScene();
 })();
@@ -36,8 +38,9 @@ function drawScene() {
 
     gl.activeTexture(gl.TEXTURE16);
     gl.uniform1i(uniform_locs["tex"], 16);
-    
-    drawDrawable(tinycube_drawable, undefined, undefined, [1.0, 1.0, 1.0]);
+
+    drawDrawable(tinycube_drawable1, undefined, undefined, [1.0, 1.0, 1.0]);
+    drawDrawable(tinycube_drawable2, undefined, undefined, [1.0, 1.0, 1.0]);
 
     drawDrawable(ashtray_drawable, 0.4);
     drawDrawable(ashtray_convex_drawable, 0.2, 0);
@@ -45,6 +48,5 @@ function drawScene() {
     drawDrawable(clock_drawable, 0.4);
     drawDrawable(clock_convex_drawable, 0.2, 0);
 
-    
     requestAnimationFrame(drawScene);
 }
