@@ -12,9 +12,6 @@ let ashtray_convex_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoord
 let clock_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 let clock_convex_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 
-let tinycube_drawable1 = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
-let tinycube_drawable2 = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
-
 let line = {"tex": undefined, "vertices": [[0,0,0],[1,1,1]], "vertexbuffer": undefined};
 
 (async function loadData() {
@@ -43,9 +40,6 @@ function drawScene() {
 
     gl.activeTexture(gl.TEXTURE16);
     gl.uniform1i(uniform_locs["tex"], 16);
-
-    drawDrawable(tinycube_drawable1, undefined, undefined, [1.0, 1.0, 1.0]);
-    drawDrawable(tinycube_drawable2, undefined, undefined, [1.0, 1.0, 1.0]);
 
     drawLine(line);
 
