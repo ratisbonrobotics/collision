@@ -47,12 +47,12 @@ setInterval(function () {
     }
 
     if(sat["collision"]){
-        ashtray_drawable.modelmatrix[12] += sat["directionOfCollision"][1][0];
-        ashtray_drawable.modelmatrix[13] += sat["directionOfCollision"][1][1];
-        ashtray_drawable.modelmatrix[14] += sat["directionOfCollision"][1][2];
-        ashtray_convex_drawable.modelmatrix[12] += sat["directionOfCollision"][1][0];
-        ashtray_convex_drawable.modelmatrix[13] += sat["directionOfCollision"][1][1];
-        ashtray_convex_drawable.modelmatrix[14] += sat["directionOfCollision"][1][2];
+        ashtray_drawable.modelmatrix[12] += sat["directionOfCollision"][0];
+        ashtray_drawable.modelmatrix[13] += sat["directionOfCollision"][1];
+        ashtray_drawable.modelmatrix[14] += sat["directionOfCollision"][2];
+        ashtray_convex_drawable.modelmatrix[12] += sat["directionOfCollision"][0];
+        ashtray_convex_drawable.modelmatrix[13] += sat["directionOfCollision"][1];
+        ashtray_convex_drawable.modelmatrix[14] += sat["directionOfCollision"][2];
     }
 
     let movementVector = getKeyboardInput(0.007);
