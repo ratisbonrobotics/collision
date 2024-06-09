@@ -23,8 +23,6 @@ let line = {"tex": undefined, "vertices": [[0,0,0],[1,1,1]], "vertexbuffer": und
     await loadDrawable('/data/antique_clock_convex_hull.obj', clock_convex_drawable);
     await loadDrawable('/data/ash_tray.obj', ashtray_drawable);
     await loadDrawable('/data/ash_tray_convex_hull.obj', ashtray_convex_drawable);
-    await loadDrawable('/data/tiny_cube.obj', tinycube_drawable1, undefined, [0, 1, 0]);
-    await loadDrawable('/data/tiny_cube.obj', tinycube_drawable2, undefined, [1, 0, 0]);
     document.getElementById('loading_overlay').style.display = 'none';
     drawScene();
 })();
