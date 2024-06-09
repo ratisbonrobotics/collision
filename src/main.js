@@ -12,12 +12,15 @@ let ashtray_convex_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoord
 let clock_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 let clock_convex_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 
+let tinycube_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(-0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
+
 (async function loadData() {
     document.getElementById('loading_overlay').style.display = 'flex';
     await loadDrawable('/data/antique_clock.obj', clock_drawable);
     await loadDrawable('/data/antique_clock_convex_hull.obj', clock_convex_drawable);
     await loadDrawable('/data/ash_tray.obj', ashtray_drawable);
     await loadDrawable('/data/ash_tray_convex_hull.obj', ashtray_convex_drawable);
+    await loadDrawable('/data/tiny_cube.obj', tinycube_drawable, undefined, [0, 1, 0]);
     document.getElementById('loading_overlay').style.display = 'none';
     drawScene();
 })();
@@ -34,10 +37,12 @@ function drawScene() {
     gl.activeTexture(gl.TEXTURE16);
     gl.uniform1i(uniform_locs["tex"], 16);
 
-    drawDrawable(ashtray_drawable, 1.0, 1);
+    drawDrawable(ashtray_drawable);
     drawDrawable(ashtray_convex_drawable, 0.2, 0);
     
-    drawDrawable(clock_drawable, 1.0, 1);
+    drawDrawable(clock_drawable);
     drawDrawable(clock_convex_drawable, 0.2, 0);
+
+    drawDrawable(tinycube_drawable, undefined, undefined, [1.0, 1.0, 1.0]);
     requestAnimationFrame(drawScene);
 }
