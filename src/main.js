@@ -19,8 +19,6 @@ let clock_convex_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordb
     await loadDrawable('/data/ash_tray.obj', ashtray_drawable);
     await loadDrawable('/data/ash_tray_convex_hull.obj', ashtray_convex_drawable);
     document.getElementById('loading_overlay').style.display = 'none';
-
-    console.log(separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable));
     drawScene();
 })();
 
