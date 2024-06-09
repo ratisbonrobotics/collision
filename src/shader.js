@@ -38,7 +38,7 @@ function getFragmentShaderSource() {
             vec3 ambient = Ka * texColor;
 
             vec3 norm = normalize(o_vertexnorm);
-            vec3 lightDirection = vec3(0.0, 1.0, 0.0); // Constant light source from above
+            vec3 lightDirection = vec3(0.0, 1.0, 0.0);
             float diffuseIntensity = max(dot(norm, lightDirection), 0.0);
             vec3 diffuse = texColor * diffuseIntensity;
 
