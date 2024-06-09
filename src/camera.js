@@ -24,13 +24,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[12] += 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["deepestVertex1"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["deepestVertex1"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["deepestVertex1"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["pointOfLargestOverlap1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["pointOfLargestOverlap1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["pointOfLargestOverlap1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["deepestVertex2"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["deepestVertex2"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["deepestVertex2"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["pointOfLargestOverlap2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["pointOfLargestOverlap2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["pointOfLargestOverlap2"][2]
         }
     }
 
@@ -39,13 +39,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[12] -= 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["deepestVertex1"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["deepestVertex1"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["deepestVertex1"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["pointOfLargestOverlap1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["pointOfLargestOverlap1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["pointOfLargestOverlap1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["deepestVertex2"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["deepestVertex2"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["deepestVertex2"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["pointOfLargestOverlap2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["pointOfLargestOverlap2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["pointOfLargestOverlap2"][2]
         }
     }
 
@@ -54,13 +54,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[14] += 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["deepestVertex1"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["deepestVertex1"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["deepestVertex1"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["pointOfLargestOverlap1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["pointOfLargestOverlap1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["pointOfLargestOverlap1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["deepestVertex2"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["deepestVertex2"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["deepestVertex2"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["pointOfLargestOverlap2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["pointOfLargestOverlap2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["pointOfLargestOverlap2"][2]
         }
     }
 
@@ -69,13 +69,13 @@ setInterval(function () {
         clock_convex_drawable.modelmatrix[14] -= 0.001;
         let sat = separatingAxisTest(ashtray_convex_drawable, clock_convex_drawable);
         if(sat["collision"]){
-            tinycube_drawable1.modelmatrix[12] = sat["deepestVertex1"][0]
-            tinycube_drawable1.modelmatrix[13] = sat["deepestVertex1"][1]
-            tinycube_drawable1.modelmatrix[14] = sat["deepestVertex1"][2]
+            tinycube_drawable1.modelmatrix[12] = sat["pointOfLargestOverlap1"][0]
+            tinycube_drawable1.modelmatrix[13] = sat["pointOfLargestOverlap1"][1]
+            tinycube_drawable1.modelmatrix[14] = sat["pointOfLargestOverlap1"][2]
     
-            tinycube_drawable2.modelmatrix[12] = sat["deepestVertex2"][0]
-            tinycube_drawable2.modelmatrix[13] = sat["deepestVertex2"][1]
-            tinycube_drawable2.modelmatrix[14] = sat["deepestVertex2"][2]
+            tinycube_drawable2.modelmatrix[12] = sat["pointOfLargestOverlap2"][0]
+            tinycube_drawable2.modelmatrix[13] = sat["pointOfLargestOverlap2"][1]
+            tinycube_drawable2.modelmatrix[14] = sat["pointOfLargestOverlap2"][2]
         }
     }
 
