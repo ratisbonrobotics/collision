@@ -12,13 +12,8 @@ let ashtray_convex_drawable = {"vertexbuffer": [], "normalbuffer": [], "texcoord
 let clock_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 let clock_convex_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.24, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 
-let line = {"tex": undefined, "vertices": [[0,0,0],[1,1,1]], "vertexbuffer": undefined};
-
 (async function loadData() {
     document.getElementById('loading_overlay').style.display = 'flex';
-    line["tex"] = await createTexture(gl, createColorImageURL([1, 0, 0]));
-    line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...line["vertices"][0], ...line["vertices"][1]]);
-
     await loadDrawable('/data/antique_clock.obj', clock_drawable);
     await loadDrawable('/data/antique_clock_convex_hull.obj', clock_convex_drawable);
     await loadDrawable('/data/ash_tray.obj', ashtray_drawable);
@@ -39,12 +34,10 @@ function drawScene() {
     gl.activeTexture(gl.TEXTURE16);
     gl.uniform1i(uniform_locs["tex"], 16);
 
-    drawLine(line);
-
-    drawDrawable(ashtray_drawable, 0.4);
+    drawDrawable(ashtray_drawable, 1.0);
     drawDrawable(ashtray_convex_drawable, 0.2, 0);
     
-    drawDrawable(clock_drawable, 0.4);
+    drawDrawable(clock_drawable, 1.0);
     drawDrawable(clock_convex_drawable, 0.2, 0);
 
     requestAnimationFrame(drawScene);

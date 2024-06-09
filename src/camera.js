@@ -47,9 +47,6 @@ setInterval(function () {
     }
 
     if(sat["collision"]){
-        gl.deleteBuffer(line["vertexbuffer"]);
-        line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...sat["directionOfCollision"][0], ...sat["directionOfCollision"][1]]);
-        // move ashtray to avoid collision
         ashtray_drawable.modelmatrix[12] += sat["directionOfCollision"][1][0];
         ashtray_drawable.modelmatrix[13] += sat["directionOfCollision"][1][1];
         ashtray_drawable.modelmatrix[14] += sat["directionOfCollision"][1][2];
