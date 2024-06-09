@@ -15,8 +15,13 @@ let clock_convex_drawable = { "vertexbuffer": [], "normalbuffer": [], "texcoordb
 let tinycube_drawable1 = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 let tinycube_drawable2 = {"vertexbuffer": [], "normalbuffer": [], "texcoordbuffer": [], "texture": [], "material": [], "modelmatrix": modelMat4f(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0), "vertices": [], "keys": [] };
 
+let line = {"tex": undefined, "vertices": [[0,0,0],[1,1,1]], "vertexbuffer": undefined};
+
 (async function loadData() {
     document.getElementById('loading_overlay').style.display = 'flex';
+    line["tex"] = await createTexture(gl, createColorImageURL([1, 0, 0]));
+    line["vertexbuffer"] = createBuffer(gl, gl.ARRAY_BUFFER, [...line["vertices"][0], ...line["vertices"][1]]);
+
     await loadDrawable('/data/antique_clock.obj', clock_drawable);
     await loadDrawable('/data/antique_clock_convex_hull.obj', clock_convex_drawable);
     await loadDrawable('/data/ash_tray.obj', ashtray_drawable);
@@ -41,6 +46,8 @@ function drawScene() {
 
     drawDrawable(tinycube_drawable1, undefined, undefined, [1.0, 1.0, 1.0]);
     drawDrawable(tinycube_drawable2, undefined, undefined, [1.0, 1.0, 1.0]);
+
+    drawLine(line);
 
     drawDrawable(ashtray_drawable, 0.4);
     drawDrawable(ashtray_convex_drawable, 0.2, 0);
