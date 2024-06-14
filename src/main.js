@@ -44,7 +44,7 @@ function drawScene() {
     drawDrawable(clock_drawable, 1.0);
     drawDrawable(clock_convex_drawable, 0.2, 0);
 
-    drawDrawable(tinycube_drawable1, undefined, undefined, [1.0, 1.0, 1.0]);
+    drawDrawable(tinycube_drawable1, undefined, undefined, [0.9,0.9,0.9]);
     drawDrawable(tinycube_drawable2, undefined, undefined, [1.0, 1.0, 1.0]);
 
     requestAnimationFrame(drawScene);
